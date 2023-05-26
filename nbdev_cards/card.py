@@ -25,22 +25,9 @@ class Card:
 @patch
 def __eq__(self: Card, other:Card): return (self.suit, self.rank)==(other.suit, other.rank)
 
-# %% ../nbs/00_card.ipynb 22
-Card(suit=1, rank=1) == Card(suit=1, rank=1)
-
-# %% ../nbs/00_card.ipynb 23
-Card(suit=1, rank=1) == Card(suit=2, rank=1)
-
 # %% ../nbs/00_card.ipynb 25
 @patch
 def __lt__(self: Card, other:Card): return self.rank < other.rank
-
-# %% ../nbs/00_card.ipynb 26
-# Example
-Card(suit=1, rank=1) < Card(suit=2, rank=2)
-
-# %% ../nbs/00_card.ipynb 28
-Card(suit=1, rank=1) > Card(suit=2, rank=1)
 
 # %% ../nbs/00_card.ipynb 30
 @patch
