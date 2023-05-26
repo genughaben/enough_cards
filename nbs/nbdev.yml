@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "nbdev_cards"
-  site-url: "https://genughaben.github.io/nbdev_cards"
+  title: "enough_cards"
+  site-url: "https://genughaben.github.io/enough_cards"
   description: "A sample of how to create a deck of cards lib using nbdev"
   repo-branch: main
-  repo-url: "https://github.com/genughaben/nbdev_cards"
+  repo-url: "https://github.com/genughaben/enough_cards"
