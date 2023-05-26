@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "foo\n\n foo ()"
+  },
+  {
+    "objectID": "deck.html",
+    "href": "deck.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()"
+  },
+  {
+    "objectID": "card.html",
+    "href": "card.html",
+    "title": "card – A playing card",
+    "section": "",
+    "text": "We will be using numbers to represent playing card suits and ranks. The suits are:\n\nsuits\n\n['♣️', '♠️', '❤️', '♦️']\n\n\nFor instance the suit at index 0 is:\n\nsuits[0]\n\n'♣️'\n\n\nThe ranks are:\n\nranks\n\n[None, None, '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']\n\n\nFor instance the rank at index 1 (note that there is not aplyaing card at position 0, since we want the ranks to match the indices where possible):\n\nranks[14]\n\n'A'\n\n\n\nsource\n\nCard\n\n Card (suit:int, rank:int)\n\nA playing card\n\n\n\n\nType\nDetails\n\n\n\n\nsuit\nint\nAn index into suits\n\n\nrank\nint\nAn index into ranks\n\n\n\nHere is an example creating an displaying card:\n\nc = Card(suit=1, rank=1)\n\n\nc\n\n♠️None\n\n\n\nprint(c)\n\n♠️None\n\n\n\n\nComparison operators\nEquality between two card is given by same suit and rank\n\nsource\n\nCard.__eq__\n\n Card.__eq__ (other:__main__.Card)\n\nReturn self==value.\n\nsource\n\n\nCard.__lt__\n\n Card.__lt__ (other:__main__.Card)\n\nReturn self&lt;value.\n\nsource\n\n\nCard.__gt__\n\n Card.__gt__ (other:__main__.Card)\n\nReturn self&gt;value."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev_cards",
+    "section": "",
+    "text": "pip install nbdev_cards"
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev_cards",
+    "section": "",
+    "text": "pip install nbdev_cards"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nbdev_cards",
+    "section": "How to use",
+    "text": "How to use\nThe lib Card helps to create and compare playing cards\n\nCard(1,2)\n\n♠️2\n\n\n\nCard(1,2) &lt; Card(1,1)\n\nFalse"
+  }
+]
