@@ -1,1 +1,1 @@
-Sitemap: https://genughaben.github.io/nbdev_cards/sitemap.xml
+Sitemap: https://genughaben.github.io/enough_cards/sitemap.xml

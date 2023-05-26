@@ -5,7 +5,7 @@ __all__ = ['Deck']
 
 # %% ../nbs/01_deck.ipynb 2
 import random
-from nbdev_cards.card import *
+from .card import *
 from fastcore.utils import *
 
 # %% ../nbs/01_deck.ipynb 4

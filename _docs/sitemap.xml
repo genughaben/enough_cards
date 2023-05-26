@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://genughaben.github.io/nbdev_cards/core.html</loc>
+    <loc>https://genughaben.github.io/enough_cards/core.html</loc>
     <lastmod>2023-05-26T16:29:24.659Z</lastmod>
   </url>
   <url>
-    <loc>https://genughaben.github.io/nbdev_cards/deck.html</loc>
+    <loc>https://genughaben.github.io/enough_cards/deck.html</loc>
     <lastmod>2023-05-26T16:29:25.024Z</lastmod>
   </url>
   <url>
-    <loc>https://genughaben.github.io/nbdev_cards/card.html</loc>
+    <loc>https://genughaben.github.io/enough_cards/card.html</loc>
     <lastmod>2023-05-26T16:29:25.336Z</lastmod>
   </url>
   <url>
-    <loc>https://genughaben.github.io/nbdev_cards/index.html</loc>
+    <loc>https://genughaben.github.io/enough_cards/index.html</loc>
     <lastmod>2023-05-26T16:29:25.815Z</lastmod>
   </url>
 </urlset>

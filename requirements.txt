@@ -100,7 +100,7 @@ murmurhash==1.0.9
 nbclient @ file:///home/conda/feedstock_root/build_artifacts/nbclient_1684790896106/work
 nbconvert @ file:///home/conda/feedstock_root/build_artifacts/nbconvert-meta_1683636231832/work
 nbdev @ file:///home/jhoward/mambaforge/conda-bld/nbdev_1676429036105/work
--e git+https://github.com/genughaben/nbdev_cards.git@993cd8078aba7b816de89bf1719d4909208892ff#egg=nbdev_cards
+-e git+https://github.com/genughaben/enough_cards.git@993cd8078aba7b816de89bf1719d4909208892ff#egg=enough_cards
 nbformat @ file:///home/conda/feedstock_root/build_artifacts/nbformat_1679336765223/work
 nest-asyncio @ file:///home/conda/feedstock_root/build_artifacts/nest-asyncio_1664684991461/work
 networkx @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_e870v6zw3n/croot/networkx_1678964339016/work
