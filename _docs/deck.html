@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="API for playing cards">
+<meta name="description" content="A collection of cards">
 
-<title>nbdev_cards - card – A playing card</title>
+<title>nbdev_cards - deck – A deck of playing cards</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,11 +96,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="nbdev_cards - card – A playing card">
-<meta property="og:description" content="API for playing cards">
+<meta property="og:title" content="nbdev_cards - deck – A deck of playing cards">
+<meta property="og:description" content="A collection of cards">
 <meta property="og:site-name" content="nbdev_cards">
-<meta name="twitter:title" content="nbdev_cards - card – A playing card">
-<meta name="twitter:description" content="API for playing cards">
+<meta name="twitter:title" content="nbdev_cards - deck – A deck of playing cards">
+<meta name="twitter:description" content="A collection of cards">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./card.html">card – A playing card</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./deck.html">deck – A deck of playing cards</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -145,13 +145,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./card.html" class="sidebar-item-text sidebar-link active">
+  <a href="./card.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">card – A playing card</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./deck.html" class="sidebar-item-text sidebar-link">
+  <a href="./deck.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">deck – A deck of playing cards</span></a>
   </div>
 </li>
@@ -165,13 +165,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#card" id="toc-card" class="nav-link active" data-scroll-target="#card">Card</a></li>
-  <li><a href="#comparison-operators" id="toc-comparison-operators" class="nav-link" data-scroll-target="#comparison-operators">Comparison operators</a>
-  <ul class="collapse">
-  <li><a href="#card.__eq__" id="toc-card.__eq__" class="nav-link" data-scroll-target="#card.__eq__">Card.__eq__</a></li>
-  <li><a href="#card.__lt__" id="toc-card.__lt__" class="nav-link" data-scroll-target="#card.__lt__">Card.__lt__</a></li>
-  <li><a href="#card.__gt__" id="toc-card.__gt__" class="nav-link" data-scroll-target="#card.__gt__">Card.__gt__</a></li>
-  </ul></li>
+  <li><a href="#deck" id="toc-deck" class="nav-link active" data-scroll-target="#deck">Deck</a></li>
+  <li><a href="#deck.shuffle" id="toc-deck.shuffle" class="nav-link" data-scroll-target="#deck.shuffle">Deck.shuffle</a></li>
+  <li><a href="#deck.pop" id="toc-deck.pop" class="nav-link" data-scroll-target="#deck.pop">Deck.pop</a></li>
+  <li><a href="#deck.remove" id="toc-deck.remove" class="nav-link" data-scroll-target="#deck.remove">Deck.remove</a></li>
+  <li><a href="#deck.draw" id="toc-deck.draw" class="nav-link" data-scroll-target="#deck.draw">Deck.draw</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/genughaben/nbdev_cards/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -180,12 +178,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">card – A playing card</h1>
+<h1 class="title">deck – A deck of playing cards</h1>
 </div>
 
 <div>
   <div class="description">
-    API for playing cards
+    A collection of cards
   </div>
 </div>
 
@@ -201,33 +199,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
-<p>We will be using numbers to represent playing card suits and ranks. The suits are:</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T14:36:27.453497Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T14:36:27.440167Z&quot;}" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>suits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>['♣️', '♠️', '❤️', '♦️']</code></pre>
+<hr>
+<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/deck.py#L12" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="deck" class="level3">
+<h3 class="anchored" data-anchor-id="deck">Deck</h3>
+<blockquote class="blockquote">
+<pre><code> Deck ()</code></pre>
+</blockquote>
+<p>A deck of 52 cards</p>
+<hr>
+<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/deck.py#L24" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.shuffle" class="level3">
+<h3 class="anchored" data-anchor-id="deck.shuffle">Deck.shuffle</h3>
+<blockquote class="blockquote">
+<pre><code> Deck.shuffle ()</code></pre>
+</blockquote>
+<p>Randomizes card order in deck</p>
+<p>A new deck contains all the cards:</p>
+<p><strong>Examples</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>♣️2; ♣️3; ♣️4; ♣️5; ♣️6; ♣️7; ♣️8; ♣️9; ♣️10; ♣️J; ♣️Q; ♣️K; ♣️A; ♠️2; ♠️3; ♠️4; ♠️5; ♠️6; ♠️7; ♠️8; ♠️9; ♠️10; ♠️J; ♠️Q; ♠️K; ♠️A; ❤️2; ❤️3; ❤️4; ❤️5; ❤️6; ❤️7; ❤️8; ❤️9; ❤️10; ❤️J; ❤️Q; ❤️K; ❤️A; ♦️2; ♦️3; ♦️4; ♦️5; ♦️6; ♦️7; ♦️8; ♦️9; ♦️10; ♦️J; ♦️Q; ♦️K; ♦️A</code></pre>
 </div>
 </div>
-<p>For instance the suit at index 0 is:</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.515696Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.513679Z&quot;}" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>suits[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It contains 52 cards.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(deck)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>52</code></pre>
 </div>
-<p>The ranks are:</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.518288Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.516343Z&quot;}" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ranks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For instance the rank at index <code>1</code> (note that there is not aplyaing card at position <code>0</code>, since we want the ranks to match the indices where possible):</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.520559Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.519025Z&quot;}" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ranks[<span class="dv">14</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>test_ne(<span class="bu">len</span>(deck), <span class="dv">51</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can check if a specific cards (here Ace of Club) is in the deck.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Card(<span class="dv">0</span>,<span class="dv">14</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Card(<span class="dv">1</span>,<span class="dv">14</span>) <span class="kw">in</span> deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>♣️A</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>True</code></pre>
+</div>
 </div>
 <hr>
-<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/card.py#L14" target="_blank" style="float:right; font-size:smaller">source</a></p>
-<section id="card" class="level3">
-<h3 class="anchored" data-anchor-id="card">Card</h3>
+<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/deck.py#L30" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.pop" class="level3">
+<h3 class="anchored" data-anchor-id="deck.pop">Deck.pop</h3>
 <blockquote class="blockquote">
-<pre><code> Card (suit:int, rank:int)</code></pre>
+<pre><code> Deck.pop (idx:int=-1)</code></pre>
 </blockquote>
-<p>A playing card</p>
+<p>Remove one card from the deck</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>idx</td>
+<td>int</td>
+<td>-1</td>
+<td>The index of the card to remove, defaulting to the last one</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p>Here we the Ace of Hearts from the deck!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ace_of_hearts <span class="op">=</span> deck.pop(<span class="dv">38</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ace_of_hearts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>❤️A</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tests</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>test_eq(Card(<span class="dv">2</span>,<span class="dv">14</span>), deck.pop(<span class="dv">38</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/deck.py#L37" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.remove" class="level3">
+<h3 class="anchored" data-anchor-id="deck.remove">Deck.remove</h3>
+<blockquote class="blockquote">
+<pre><code> Deck.remove (card:nbdev_cards.card.Card)</code></pre>
+</blockquote>
 <table class="table">
 <thead>
 <tr class="header">
@@ -238,73 +312,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>suit</td>
-<td>int</td>
-<td>An index into <code>suits</code></td>
-</tr>
-<tr class="even">
-<td>rank</td>
-<td>int</td>
-<td>An index into <code>ranks</code></td>
+<td>card</td>
+<td>Card</td>
+<td>Card to remove</td>
 </tr>
 </tbody>
 </table>
-<p>Here is an example creating an displaying card:</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.575664Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.574379Z&quot;}" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.577847Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.576200Z&quot;}" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.579956Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.578484Z&quot;}" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="comparison-operators" class="level1">
-<h1>Comparison operators</h1>
-<p>Equality between two card is given by same suit and rank</p>
-<hr>
-<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/card.py#L26" target="_blank" style="float:right; font-size:smaller">source</a></p>
-<section id="card.__eq__" class="level3">
-<h3 class="anchored" data-anchor-id="card.__eq__">Card.__eq__</h3>
-<blockquote class="blockquote">
-<pre><code> Card.__eq__ (other:__main__.Card)</code></pre>
-</blockquote>
-<p>Return self==value.</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.587574Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.585800Z&quot;}" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>) <span class="op">==</span> Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.590285Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.588398Z&quot;}" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>) <span class="op">==</span> Card(suit<span class="op">=</span><span class="dv">2</span>, rank<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.597092Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.595260Z&quot;}" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>) <span class="op">&lt;</span> Card(suit<span class="op">=</span><span class="dv">2</span>, rank<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Examples</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tests</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>remove_card <span class="op">=</span> Card(<span class="dv">2</span>,<span class="dv">14</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>deck.remove(remove_card)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>test_eq(<span class="dv">51</span>, <span class="bu">len</span>(deck))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>test_ne(<span class="va">True</span>, Card(<span class="dv">2</span>,<span class="dv">14</span>) <span class="kw">in</span> deck)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> remove_card <span class="kw">not</span> <span class="kw">in</span> deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/card.py#L36" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/deck.py#L44" target="_blank" style="float:right; font-size:smaller">source</a></p>
 </section>
-<section id="card.__lt__" class="level3">
-<h3 class="anchored" data-anchor-id="card.__lt__">Card.__lt__</h3>
+<section id="deck.draw" class="level3">
+<h3 class="anchored" data-anchor-id="deck.draw">Deck.draw</h3>
 <blockquote class="blockquote">
-<pre><code> Card.__lt__ (other:__main__.Card)</code></pre>
+<pre><code> Deck.draw (n:int=1, replace:bool=True)</code></pre>
 </blockquote>
-<p>Return self&lt;value.</p>
-<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-05-26T13:13:06.603182Z&quot;,&quot;start_time&quot;:&quot;2023-05-26T13:13:06.601357Z&quot;}" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Card(suit<span class="op">=</span><span class="dv">1</span>, rank<span class="op">=</span><span class="dv">1</span>) <span class="op">&gt;</span> Card(suit<span class="op">=</span><span class="dv">2</span>, rank<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>n</td>
+<td>int</td>
+<td>1</td>
+<td>Number of cards to be drawn</td>
+</tr>
+<tr class="even">
+<td>replace</td>
+<td>bool</td>
+<td>True</td>
+<td>When true: drawn with replace, if false: not.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drawn without replacement</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>deck.draw(<span class="dv">10</span>, <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[♣️A, ♠️A, ♦️J, ♣️4, ❤️2, ♦️4, ♦️10, ❤️K, ♠️3, ♦️6]</code></pre>
 </div>
-<hr>
-<p><a href="https://github.com/genughaben/nbdev_cards/blob/main/nbdev_cards/card.py#L47" target="_blank" style="float:right; font-size:smaller">source</a></p>
-</section>
-<section id="card.__gt__" class="level3">
-<h3 class="anchored" data-anchor-id="card.__gt__">Card.__gt__</h3>
-<blockquote class="blockquote">
-<pre><code> Card.__gt__ (other:__main__.Card)</code></pre>
-</blockquote>
-<p>Return self&gt;value.</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drawn with replacement</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>deck.draw(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[♦️10, ❤️K, ♣️7, ♦️3, ♠️Q, ♠️K, ♠️K, ♠️10, ♣️J, ♦️J]</code></pre>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
